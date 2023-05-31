@@ -1,17 +1,17 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json",
-  "compilerOptions": {
-    "strict": true,
-    "baseUrl": ".",
-    "paths": {
-      "@interfaces": ["src/interfaces/*"],
-      "@components": ["src/components/*"],
-      "@hooks": ["src/hooks/*"],
-      "@utils": ["src/utils/*"],
-      "@types": ["src/types/*"],
-      "@constants": ["src/constants/*"],
-      "@screens": ["src/screens/*"],
-      "@theme": ["src/theme/*"]
-    }
-  }
+	"extends": "@tsconfig/react-native/tsconfig.json",
+	"compilerOptions": {
+		"strict": true,
+		"baseUrl": ".",
+		"paths": {
+			"@interfaces/*": ["src/interfaces/*"],
+			"@components/*": ["src/components/*"],
+			"@hooks/*": ["src/hooks/*"],
+			"@utils/*": ["src/utils/*"],
+			"@types/*": ["src/types/*"],
+			"@constants/*": ["src/constants/*"],
+			"@screens/*": ["src/screens/*"],
+			"@theme/*": ["src/theme/*"]
+		}
+	}
 }
