@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 
 import { useTheme } from '@hooks/useTheme';
+import { Layout } from '@components/widgets/Layout';
 
 import { ThemeProvider } from 'styled-components';
-import { SafeAreaView, Text } from 'react-native';
+import {  Text } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
 function App(): JSX.Element {
@@ -15,9 +16,9 @@ function App(): JSX.Element {
 
 	return (
 		<ThemeProvider theme={appTheme}>
-			<SafeAreaView>
-				<Text>Hel</Text>
-			</SafeAreaView>
+			<Layout>
+				<Text>1</Text>
+			</Layout>
 		</ThemeProvider>
 	);
 }

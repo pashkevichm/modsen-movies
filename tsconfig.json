@@ -3,6 +3,7 @@
 	"compilerOptions": {
 		"strict": true,
 		"baseUrl": ".",
+		"types": ["@types/styled-components-react-native"],
 		"paths": {
 			"@interfaces/*": ["src/interfaces/*"],
 			"@components/*": ["src/components/*"],
