@@ -1,7 +1,6 @@
-import { colors } from '@theme/theme';
+import { colors } from 'src/app/theme/theme';
 
-const {  white,black } =
-	colors;
+const { white, black } = colors;
 
 export interface ThemeType {
 	themeName: 'light' | 'dark';

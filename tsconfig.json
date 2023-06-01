@@ -3,16 +3,14 @@
 	"compilerOptions": {
 		"strict": true,
 		"baseUrl": ".",
-		"types": ["@types/styled-components-react-native"],
+		"types": ["@types/styled-components-react-native", "node"],
 		"paths": {
-			"@interfaces/*": ["src/interfaces/*"],
-			"@components/*": ["src/components/*"],
-			"@hooks/*": ["src/hooks/*"],
-			"@utils/*": ["src/utils/*"],
-			"@types/*": ["src/types/*"],
-			"@constants/*": ["src/constants/*"],
+			"@app/*": ["src/app/*"],
+			"@features/*": ["src/features/*"],
 			"@screens/*": ["src/screens/*"],
-			"@theme/*": ["src/theme/*"]
+			"@shared/*": ["src/shared/*"],
+			"@widgets/*": ["src/widgets/*"],
+			"@entities/*": ["src/entities/*"]
 		}
 	}
 }

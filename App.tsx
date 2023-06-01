@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 
-import { useTheme } from '@hooks/useTheme';
-import { Layout } from '@components/widgets/Layout';
+import { useTheme } from '@shared/lib/hooks/useTheme';
+import { TopFilmsScreen } from '@screens/TopFilmsScreen';
+import { Layout } from '@app/wrappers/Layout';
+import { store } from '@app/store/store';
 
 import { ThemeProvider } from 'styled-components';
-import {  Text } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import { Provider } from 'react-redux';
 
 function App(): JSX.Element {
 	const { appTheme } = useTheme();
@@ -15,11 +17,13 @@ function App(): JSX.Element {
 	}, []);
 
 	return (
-		<ThemeProvider theme={appTheme}>
-			<Layout>
-				<Text>1</Text>
-			</Layout>
-		</ThemeProvider>
+		<Provider store={store}>
+			<ThemeProvider theme={appTheme}>
+				<Layout>
+					<TopFilmsScreen />
+				</Layout>
+			</ThemeProvider>
+		</Provider>
 	);
 }
 
