@@ -8,7 +8,7 @@ import { topMoviesReducer } from './slices/topMovies.slice';
 import type { ThunkAction, Action } from '@reduxjs/toolkit';
 
 const rootReducer = combineReducers({
-	topMoviesReducer,
+	topMovies: topMoviesReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();

@@ -5,12 +5,12 @@ import type { TopMovie } from '@entities/Movie/interfaces';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface TopMoviesState {
-	topMovies: null | TopMovie[];
+	topMovies: TopMovie[];
 	topMoviesLoadingStatus: LOADING_STATUS;
 }
 
 const initialState: TopMoviesState = {
-	topMovies: null,
+	topMovies: [],
 	topMoviesLoadingStatus: LOADING_STATUS.IDLE,
 };
 

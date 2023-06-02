@@ -1,11 +1,12 @@
+import { REACT_APP_IMDB_API_KEY } from '@env';
+
 import axios from 'axios';
 import type { AxiosInstance } from 'axios';
 
-import type { TopMovie } from '@interfaces/movie';
+import type { TopMovie } from '@entities/Movie/interfaces';
 
 const apiHost = 'imdb-top-100-movies.p.rapidapi.com';
-const apiKey = process.env.IMDB_API_KEY ?? '';
-
+const apiKey = REACT_APP_IMDB_API_KEY;
 const imdbApiInstance: AxiosInstance = axios.create({
 	baseURL: `https://${apiHost}`,
 	headers: {
