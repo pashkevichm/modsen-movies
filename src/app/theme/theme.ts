@@ -8,19 +8,21 @@ export const colors = {
 	darkGray: '#696969',
 } as const;
 
-const { white, black } = colors;
+const { white, black, darkBlack } = colors;
 const fontFamily = 'Poppins';
 
 export const lightTheme: ThemeType = {
 	themeName: 'light',
 	themeBackgroundColor: white,
 	themeTextColor: black,
+	themeBottomTabBarNavigationBackgroundColor: white,
 };
 
 export const darkTheme: ThemeType = {
 	themeName: 'dark',
 	themeBackgroundColor: black,
 	themeTextColor: white,
+	themeBottomTabBarNavigationBackgroundColor: darkBlack,
 };
 
 export const theme: Theme = {

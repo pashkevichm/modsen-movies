@@ -1,4 +1,4 @@
-import type { TopMovie } from '@entities/Movie/interfaces';
+import type { TopMovie } from '@entities/TopMovie/interfaces';
 
 export interface TopMovieItemProps {
 	position: number;

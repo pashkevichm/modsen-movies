@@ -8,7 +8,7 @@ import {
 	settopMoviesLoadingStatus,
 } from '../slices/topMovies.slice';
 
-import type { TopMovie } from '@entities/Movie/interfaces';
+import type { TopMovie } from '@entities/TopMovie/interfaces';
 
 export function* fetchTopMoviesWorker() {
 	yield put(settopMoviesLoadingStatus(LOADING_STATUS.LOADING));

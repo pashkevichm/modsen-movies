@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 
 import { useTheme } from '@shared/lib/hooks/useTheme';
-import { Layout } from '@app/wrappers/Layout';
 import { store } from '@app/store/store';
 import { NavigationContainer } from '@react-navigation/native';
-import { BottomTabNavigator } from '@features/BottomTabNavigator';
+import { BottomTabNavigation } from '@features/BottomTabNavigation';
 
 import { ThemeProvider } from 'styled-components';
 import SplashScreen from 'react-native-splash-screen';
@@ -20,8 +19,7 @@ function App(): JSX.Element {
 		<NavigationContainer>
 			<Provider store={store}>
 				<ThemeProvider theme={appTheme}>
-					{/* <Layout></Layout> */}
-					<BottomTabNavigator />
+					<BottomTabNavigation />
 				</ThemeProvider>
 			</Provider>
 		</NavigationContainer>

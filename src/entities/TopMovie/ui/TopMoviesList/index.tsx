@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { TopMovieItem } from '../TopMovieItem';
 
-import type { TopMovie } from '@entities/Movie/interfaces';
+import type { TopMovie } from '@entities/TopMovie/interfaces';
 
 export const TopMoviesList = () => {
 	const dispatch = useDispatch();

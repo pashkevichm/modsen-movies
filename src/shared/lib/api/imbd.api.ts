@@ -1,11 +1,11 @@
-import { topMoviesMock } from '@entities/Movie/lib/mock/topMovies';
+import { topMoviesMock } from '@entities/TopMovie/lib/mock/topMovies';
 
 import { REACT_APP_IMDB_API_KEY } from '@env';
 
 import axios from 'axios';
 import type { AxiosInstance } from 'axios';
 
-import type { TopMovie } from '@entities/Movie/interfaces';
+import type { TopMovie } from '@entities/TopMovie/interfaces';
 
 const apiHost = 'imdb-top-100-movies.p.rapidapi.com';
 const apiKey = REACT_APP_IMDB_API_KEY;

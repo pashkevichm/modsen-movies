@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { LOADING_STATUS } from '@shared/lib/constants/loadingStatus';
 
-import type { TopMovie } from '@entities/Movie/interfaces';
+import type { TopMovie } from '@entities/TopMovie/interfaces';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface TopMoviesState {
