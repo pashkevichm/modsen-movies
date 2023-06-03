@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 
 import { useTheme } from '@shared/lib/hooks/useTheme';
-import { TopFilmsScreen } from '@screens/TopFilmsScreen';
 import { Layout } from '@app/wrappers/Layout';
 import { store } from '@app/store/store';
+import { NavigationContainer } from '@react-navigation/native';
+import { BottomTabNavigator } from '@features/BottomTabNavigator';
 
 import { ThemeProvider } from 'styled-components';
 import SplashScreen from 'react-native-splash-screen';
@@ -16,13 +17,14 @@ function App(): JSX.Element {
 	}, []);
 
 	return (
-		<Provider store={store}>
-			<ThemeProvider theme={appTheme}>
-				<Layout>
-					<TopFilmsScreen />
-				</Layout>
-			</ThemeProvider>
-		</Provider>
+		<NavigationContainer>
+			<Provider store={store}>
+				<ThemeProvider theme={appTheme}>
+					{/* <Layout></Layout> */}
+					<BottomTabNavigator />
+				</ThemeProvider>
+			</Provider>
+		</NavigationContainer>
 	);
 }
 
