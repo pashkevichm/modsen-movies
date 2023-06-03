@@ -9,7 +9,10 @@ import { LOADING_STATUS } from '@shared/lib/constants/loadingStatus';
 import { Spinner } from '@shared/ui/Spinner';
 
 import { FlatList, Text } from 'react-native';
+import type { ListRenderItem } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { TopMovieItem } from '../TopMovieItem';
 
 import type { TopMovie } from '@entities/Movie/interfaces';
 
@@ -18,9 +21,6 @@ export const TopMoviesList = () => {
 
 	const topMovies = useSelector(selectTopMovies);
 	const topMoviesLoadingStatus = useSelector(selectTopMoviesLoadingStatus);
-
-	console.log(topMovies);
-	console.log(topMoviesLoadingStatus);
 
 	useEffect(() => {
 		dispatch(fetchTopMovies());
@@ -34,11 +34,28 @@ export const TopMoviesList = () => {
 		return <Text>Error</Text>;
 	}
 
+	const renderItem: ListRenderItem<TopMovie> = ({ item, index }) => (
+		<TopMovieItem key={item.imdbid} topMovie={item} position={index + 1} />
+	);
+
+	const keyExtractor = (item: TopMovie) => item.imdbid;
+
+	const getItemLayout = (
+		data: TopMovie[] | null | undefined,
+		index: number
+	) => ({
+		length: 200,
+		offset: 200 * index,
+		index,
+	});
+
 	return (
 		<FlatList<TopMovie>
 			data={topMovies}
-			renderItem={({ item }) => <Text>{item.description}</Text>}
-			keyExtractor={(item) => item.id}
+			renderItem={renderItem}
+			keyExtractor={keyExtractor}
+			getItemLayout={getItemLayout}
+			windowSize={6}
 		/>
 	);
 };

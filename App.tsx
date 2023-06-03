@@ -11,7 +11,6 @@ import { Provider } from 'react-redux';
 
 function App(): JSX.Element {
 	const { appTheme } = useTheme();
-
 	useEffect(() => {
 		SplashScreen.hide();
 	}, []);

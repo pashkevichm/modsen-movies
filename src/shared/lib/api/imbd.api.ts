@@ -1,3 +1,5 @@
+import { topMoviesMock } from '@entities/Movie/lib/mock/topMovies';
+
 import { REACT_APP_IMDB_API_KEY } from '@env';
 
 import axios from 'axios';
@@ -17,8 +19,8 @@ const imdbApiInstance: AxiosInstance = axios.create({
 
 export const imdbApi = {
 	async getTopMovies() {
-		const { data } = await imdbApiInstance.get<TopMovie[]>('');
+		// const { data } = await imdbApiInstance.get<TopMovie[]>('');
 
-		return data;
+		return topMoviesMock;
 	},
 };

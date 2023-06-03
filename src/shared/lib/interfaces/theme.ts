@@ -1,4 +1,4 @@
-import { colors } from 'src/app/theme/theme';
+import { colors } from '@app/theme/theme';
 
 const { white, black } = colors;
 
@@ -9,6 +9,7 @@ export interface ThemeType {
 }
 
 export interface Theme {
+	fontFamily: string;
 	colors: typeof colors;
 	themeType: ThemeType;
 }

@@ -1,30 +1,30 @@
-import type { Theme, ThemeType } from '@interfaces/theme';
+import type { ThemeType, Theme } from '@shared/lib/interfaces/theme';
 
 export const colors = {
 	darkBlack: '#16171F',
 	black: '#1E1F27',
-	white: '#FFFFF',
+	white: '#ffffff',
 	gray: '#D9D9D9',
 	darkGray: '#696969',
 } as const;
 
-const { white, black, } =
-	colors;
+const { white, black } = colors;
+const fontFamily = 'Poppins';
 
 export const lightTheme: ThemeType = {
 	themeName: 'light',
-	themeBackgroundColor: black,
-	themeTextColor: white,
-
-};
-
-export const darkTheme: ThemeType = {
-	themeName: 'dark',
 	themeBackgroundColor: white,
 	themeTextColor: black,
 };
 
+export const darkTheme: ThemeType = {
+	themeName: 'dark',
+	themeBackgroundColor: black,
+	themeTextColor: white,
+};
+
 export const theme: Theme = {
+	fontFamily,
 	colors,
 	themeType: darkTheme,
 };
