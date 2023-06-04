@@ -5,19 +5,19 @@ import { imdbApi } from '@shared/lib/api/imbd.api';
 import {
 	fetchTopMovies,
 	setTopMovies,
-	settopMoviesLoadingStatus,
+	setTopMoviesLoadingStatus,
 } from '../slices/topMovies.slice';
 
 import type { TopMovie } from '@entities/TopMovie/interfaces';
 
 export function* fetchTopMoviesWorker() {
-	yield put(settopMoviesLoadingStatus(LOADING_STATUS.LOADING));
+	yield put(setTopMoviesLoadingStatus(LOADING_STATUS.LOADING));
 	try {
 		const data: TopMovie[] = yield call(imdbApi.getTopMovies);
 		yield put(setTopMovies(data));
-		yield put(settopMoviesLoadingStatus(LOADING_STATUS.IDLE));
+		yield put(setTopMoviesLoadingStatus(LOADING_STATUS.IDLE));
 	} catch (error) {
-		yield put(settopMoviesLoadingStatus(LOADING_STATUS.ERROR));
+		yield put(setTopMoviesLoadingStatus(LOADING_STATUS.ERROR));
 	}
 }
 

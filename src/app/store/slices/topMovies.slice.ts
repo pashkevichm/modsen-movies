@@ -7,11 +7,13 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 export interface TopMoviesState {
 	topMovies: TopMovie[];
 	topMoviesLoadingStatus: LOADING_STATUS;
+	topMovieSearchValue: string;
 }
 
 const initialState: TopMoviesState = {
 	topMovies: [],
 	topMoviesLoadingStatus: LOADING_STATUS.IDLE,
+	topMovieSearchValue: '',
 };
 
 export const topMoviesSlice = createSlice({
@@ -22,15 +24,22 @@ export const topMoviesSlice = createSlice({
 		setTopMovies: (state, action: PayloadAction<TopMovie[]>) => {
 			state.topMovies = action.payload;
 		},
-		settopMoviesLoadingStatus: (
+		setTopMoviesLoadingStatus: (
 			state,
 			action: PayloadAction<LOADING_STATUS>
 		) => {
 			state.topMoviesLoadingStatus = action.payload;
 		},
+		setTopMoviesSearchValue: (state, action: PayloadAction<string>) => {
+			state.topMovieSearchValue = action.payload;
+		},
 	},
 });
 
-export const { setTopMovies, settopMoviesLoadingStatus, fetchTopMovies } =
-	topMoviesSlice.actions;
+export const {
+	setTopMovies,
+	setTopMoviesLoadingStatus,
+	fetchTopMovies,
+	setTopMoviesSearchValue,
+} = topMoviesSlice.actions;
 export const topMoviesReducer = topMoviesSlice.reducer;

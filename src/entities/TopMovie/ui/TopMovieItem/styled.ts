@@ -46,8 +46,13 @@ export const MoreButtonWrapper = styled.View`
 	align-items: flex-end;
 `;
 
-export const MoreButtonArrowImage = styled.Image`
+export const MoreButtonArrowImageWrapper = styled.View`
 	width: 7px;
 	height: 7px;
-	margin-left: 3px;
+	margin-left: 8px;
+`;
+
+export const MoreButtonArrowImage = styled.Image`
+	max-width: 100%;
+	max-height: 100%;
 `;

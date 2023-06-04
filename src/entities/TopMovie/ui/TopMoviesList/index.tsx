@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import {
-	selectTopMovies,
+	selectTopMoviesBySearchValue,
 	selectTopMoviesLoadingStatus,
 } from '@app/store/selectors/topMovies.selector';
 import { fetchTopMovies } from '@app/store/slices/topMovies.slice';
@@ -19,7 +19,7 @@ import type { TopMovie } from '@entities/TopMovie/interfaces';
 export const TopMoviesList = () => {
 	const dispatch = useDispatch();
 
-	const topMovies = useSelector(selectTopMovies);
+	const topMovies = useSelector(selectTopMoviesBySearchValue);
 	const topMoviesLoadingStatus = useSelector(selectTopMoviesLoadingStatus);
 
 	useEffect(() => {
@@ -35,7 +35,7 @@ export const TopMoviesList = () => {
 	}
 
 	const renderItem: ListRenderItem<TopMovie> = ({ item, index }) => (
-		<TopMovieItem key={item.imdbid} topMovie={item} position={index + 1} />
+		<TopMovieItem key={item.id} topMovie={item} position={index + 1} />
 	);
 
 	const keyExtractor = (item: TopMovie) => item.imdbid;

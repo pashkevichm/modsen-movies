@@ -5,6 +5,7 @@ import { Rating } from '@shared/ui/Rating';
 
 import {
 	MoreButtonArrowImage,
+	MoreButtonArrowImageWrapper,
 	MoreButtonWrapper,
 	TopMovieContent,
 	TopMovieDescriptionText,
@@ -20,13 +21,13 @@ export const TopMovieItem = memo(function item({
 	topMovie,
 	position,
 }: TopMovieItemProps) {
-	const { title, genre, director, rating, image } = topMovie;
+	const { title, genre, director, rating, image, id } = topMovie;
 
 	const genres = genre.join(' ');
 	const authors = director.join(' ');
 
 	return (
-		<TopMovieItemWrapper>
+		<TopMovieItemWrapper key={id}>
 			<TopMovieImageWrapper>
 				<TopMovieImage source={{ uri: image }} />
 			</TopMovieImageWrapper>
@@ -44,10 +45,12 @@ export const TopMovieItem = memo(function item({
 				<MoreButtonWrapper>
 					<Button size='small'>
 						More
-						<MoreButtonArrowImage
-							source={require('@app/assets/icons/arrow-left.png')}
-							resizeMode='contain'
-						/>
+						<MoreButtonArrowImageWrapper>
+							<MoreButtonArrowImage
+								source={require('@app/assets/icons/arrow-left.png')}
+								resizeMode='contain'
+							/>
+						</MoreButtonArrowImageWrapper>
 					</Button>
 				</MoreButtonWrapper>
 			</TopMovieContent>
