@@ -12,7 +12,7 @@ import { FlatList, Text } from 'react-native';
 import type { ListRenderItem } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { TopMovieItem } from '../TopMovieItem';
+import { TopMovieCard } from '../TopMovieCard';
 
 import type { TopMovie } from '@entities/TopMovie/interfaces';
 
@@ -35,7 +35,7 @@ export const TopMoviesList = () => {
 	}
 
 	const renderItem: ListRenderItem<TopMovie> = ({ item, index }) => (
-		<TopMovieItem key={item.id} topMovie={item} position={index + 1} />
+		<TopMovieCard key={item.id} topMovie={item} position={index + 1} />
 	);
 
 	const keyExtractor = (item: TopMovie) => item.imdbid;

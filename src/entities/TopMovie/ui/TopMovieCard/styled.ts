@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const TopMovieItemWrapper = styled.View`
+export const TopMovieCardWrapper = styled.View`
 	flex: 1;
 	flex-direction: row;
 	gap: 20px;

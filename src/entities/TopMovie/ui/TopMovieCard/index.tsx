@@ -11,23 +11,23 @@ import {
 	TopMovieDescriptionText,
 	TopMovieImage,
 	TopMovieImageWrapper,
-	TopMovieItemWrapper,
+	TopMovieCardWrapper,
 	TopMovieTitle,
 } from './styled';
 
-import type { TopMovieItemProps } from './intefaces';
+import type { TopMovieCardProps } from './intefaces';
 
-export const TopMovieItem = memo(function item({
+export const TopMovieCard = memo(function item({
 	topMovie,
 	position,
-}: TopMovieItemProps) {
+}: TopMovieCardProps) {
 	const { title, genre, director, rating, image, id } = topMovie;
 
-	const genres = genre.join(' ');
-	const authors = director.join(' ');
+	const genres = genre.join(', ');
+	const authors = director.join(', ');
 
 	return (
-		<TopMovieItemWrapper key={id}>
+		<TopMovieCardWrapper key={id}>
 			<TopMovieImageWrapper>
 				<TopMovieImage source={{ uri: image }} />
 			</TopMovieImageWrapper>
@@ -52,6 +52,6 @@ export const TopMovieItem = memo(function item({
 					</Button>
 				</MoreButtonWrapper>
 			</TopMovieContent>
-		</TopMovieItemWrapper>
+		</TopMovieCardWrapper>
 	);
 });
