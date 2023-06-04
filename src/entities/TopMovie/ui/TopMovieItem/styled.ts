@@ -4,7 +4,8 @@ export const TopMovieItemWrapper = styled.View`
 	flex: 1;
 	flex-direction: row;
 	gap: 20px;
-	height: 200px;
+	height: 130px;
+	margin-bottom: 20px;
 `;
 
 export const TopMovieImageWrapper = styled.View`
@@ -39,14 +40,14 @@ export const TopMovieDescriptionText = styled.Text`
 	line-height: 18px;
 `;
 
-export const TopMovieRating = styled.Text`
-	color: ${({ theme }) => theme.themeType.themeTextColor};
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 24px;
+export const MoreButtonWrapper = styled.View`
+	flex: 1;
+	flex-direction: row;
+	align-items: flex-end;
 `;
 
-export const RatingIcon = styled.Image`
-	width: 13px;
-	height: 13px;
+export const MoreButtonArrowImage = styled.Image`
+	width: 7px;
+	height: 7px;
+	margin-left: 3px;
 `;

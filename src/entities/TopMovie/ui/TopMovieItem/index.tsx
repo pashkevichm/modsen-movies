@@ -1,13 +1,16 @@
 import { memo } from 'react';
 
+import { Button } from '@shared/ui/Button';
+import { Rating } from '@shared/ui/Rating';
+
 import {
-	RatingIcon,
+	MoreButtonArrowImage,
+	MoreButtonWrapper,
 	TopMovieContent,
 	TopMovieDescriptionText,
 	TopMovieImage,
 	TopMovieImageWrapper,
 	TopMovieItemWrapper,
-	TopMovieRating,
 	TopMovieTitle,
 } from './styled';
 
@@ -17,7 +20,7 @@ export const TopMovieItem = memo(function item({
 	topMovie,
 	position,
 }: TopMovieItemProps) {
-	const { title, genre, director, rating, description, image } = topMovie;
+	const { title, genre, director, rating, image } = topMovie;
 
 	const genres = genre.join(' ');
 	const authors = director.join(' ');
@@ -28,7 +31,7 @@ export const TopMovieItem = memo(function item({
 				<TopMovieImage source={{ uri: image }} />
 			</TopMovieImageWrapper>
 			<TopMovieContent>
-				<TopMovieTitle>
+				<TopMovieTitle numberOfLines={2}>
 					{position}. {title}
 				</TopMovieTitle>
 				<TopMovieDescriptionText>
@@ -37,15 +40,16 @@ export const TopMovieItem = memo(function item({
 				<TopMovieDescriptionText>
 					Authors: {authors}
 				</TopMovieDescriptionText>
-				<TopMovieRating>
-					{rating}{' '}
-					<RatingIcon
-						source={require('@app/assets/icons/star.png')}
-					/>
-				</TopMovieRating>
-				<TopMovieDescriptionText numberOfLines={4} ellipsizeMode='tail'>
-					{description}
-				</TopMovieDescriptionText>
+				<Rating rating={+rating} />
+				<MoreButtonWrapper>
+					<Button size='small'>
+						More
+						<MoreButtonArrowImage
+							source={require('@app/assets/icons/arrow-left.png')}
+							resizeMode='contain'
+						/>
+					</Button>
+				</MoreButtonWrapper>
 			</TopMovieContent>
 		</TopMovieItemWrapper>
 	);

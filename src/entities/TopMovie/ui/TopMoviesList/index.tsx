@@ -44,8 +44,8 @@ export const TopMoviesList = () => {
 		data: TopMovie[] | null | undefined,
 		index: number
 	) => ({
-		length: 200,
-		offset: 200 * index,
+		length: 150,
+		offset: 150 * index,
 		index,
 	});
 

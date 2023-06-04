@@ -5,7 +5,9 @@ import { BottomNavigationTabBar } from './ui/BottomNavitationTabBar/Index';
 import { BottonNavigationTabIcon } from './ui/BottomTabBarIcon';
 import { bottomNavigationScreens } from './lib/constants/bottomNavigationScreens';
 
-const Tab = createBottomTabNavigator();
+import type { BottomNavigationParamList } from './types';
+
+const Tab = createBottomTabNavigator<BottomNavigationParamList>();
 
 export const BottomTabNavigation = () => {
 	return (
