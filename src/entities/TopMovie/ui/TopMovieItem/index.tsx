@@ -5,7 +5,7 @@ import { Rating } from '@shared/ui/Rating';
 
 import {
 	MoreButtonArrowImage,
-	MoreButtonArrowImageWrapper,
+	MoreButtonText,
 	MoreButtonWrapper,
 	TopMovieContent,
 	TopMovieDescriptionText,
@@ -44,13 +44,11 @@ export const TopMovieItem = memo(function item({
 				<Rating rating={+rating} />
 				<MoreButtonWrapper>
 					<Button size='small'>
-						More
-						<MoreButtonArrowImageWrapper>
-							<MoreButtonArrowImage
-								source={require('@app/assets/icons/arrow-left.png')}
-								resizeMode='contain'
-							/>
-						</MoreButtonArrowImageWrapper>
+						<MoreButtonText>More</MoreButtonText>
+						<MoreButtonArrowImage
+							source={require('@app/assets/icons/arrow-left.png')}
+							resizeMode='contain'
+						/>
 					</Button>
 				</MoreButtonWrapper>
 			</TopMovieContent>

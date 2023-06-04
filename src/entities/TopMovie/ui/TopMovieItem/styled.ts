@@ -23,6 +23,7 @@ export const TopMovieImage = styled.Image`
 
 export const TopMovieContent = styled.View`
 	flex: 1;
+	align-items: flex-start;
 `;
 
 export const TopMovieTitle = styled.Text`
@@ -46,13 +47,15 @@ export const MoreButtonWrapper = styled.View`
 	align-items: flex-end;
 `;
 
-export const MoreButtonArrowImageWrapper = styled.View`
-	width: 7px;
-	height: 7px;
-	margin-left: 8px;
+export const MoreButtonArrowImage = styled.Image`
+	width: 8px;
+	height: 8px;
+	margin-left: 3px;
 `;
 
-export const MoreButtonArrowImage = styled.Image`
-	max-width: 100%;
-	max-height: 100%;
+export const MoreButtonText = styled.Text`
+	font-weight: 400;
+	font-size: 11px;
+	line-height: 16px;
+	color: ${({ theme }) => theme.colors.white};
 `;
